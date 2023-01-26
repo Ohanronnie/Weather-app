@@ -56,10 +56,10 @@ export default function App() {
   }
   let eachOf;
   if (data) {
-    eachOf = data.forecast.forecastday.map(function (item) {
+    eachOf = data.forecast.forecastday.map(function (item,id) {
       return (
         <>
-          <li className="active">
+          <li key={id} className="active">
             <img
               src={"http:" + item.day.condition.icon}
               className="day-icon"
