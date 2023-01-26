@@ -11,7 +11,7 @@ export default function App() {
       )
         .catch((err) => setInfo("auto:ip"))
         .then((response) => response.json())
-        .then((datas) => {!datas.error ? setData(datas) : alert("Use a valid city")})
+        .then((datas) => {!datas.error && setData(datas)})
     },
     [info]
   );
