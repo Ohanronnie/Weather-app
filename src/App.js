@@ -8,10 +8,7 @@ export default function App() {
     function () {
       fetch(
         `http://api.weatherapi.com/v1/forecast.json?key=5645245767d44a31a47134430222712&q=${info}&days=5&aqi=yes&alerts=yes`
-      )
-        .catch((err) => setInfo("auto:ip"))
-        .then((response) => response.json())
-        .then((datas) => {!datas.error && setData(datas)})
+      ).then((response) => response.json()).then((datas) => {!datas.error && setData(datas)}).catch((err) => setInfo("auto:ip"));
     },
     [info]
   );
