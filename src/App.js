@@ -5,10 +5,16 @@ export default function App() {
   const [info, setInfo] = useState("auto:ip");
   //const [input, setInput] = useState('');
   useEffect(
-    function () {
-      fetch(
-        `http://api.weatherapi.com/v1/forecast.json?key=5645245767d44a31a47134430222712&q=${info}&days=5&aqi=yes&alerts=yes`
-      ).then((response) => response.json()).then((datas) => {!datas.error && setData(datas)}).catch((err) => setInfo("auto:ip"));
+   async function () {
+     try{
+     let response =  await fetch(`http://api.weatherapi.com/v1/forecast.json?key=5645245767d44a31a47134430222712&q=${info}&days=5&aqi=yes&alerts=yes`);
+     let datas = await response.json();
+     if(!datas.error){setData(datas)}
+     }
+     catch(err){
+       alert('Use a valid city');
+       setInfo("auto:ip");
+     }
     },
     [info]
   );
