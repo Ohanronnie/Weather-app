@@ -15,7 +15,6 @@ export default function App() {
      }
      catch(err){
        alert('Use a valid city');
-       alert(err)
        setInfo("auto:ip");
      }
     })();
