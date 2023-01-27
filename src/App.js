@@ -9,7 +9,7 @@ export default function App() {
    function () {
    (async function(){
      try{
-     let response =  await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=5645245767d44a31a47134430222712&q=${info}&days=5&aqi=yes&alerts=yes`);
+     let response =  await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=5645245767d44a31a47134430222712&q=${info}&days=5&aqi=yes&alerts=yes`);
      let datas = response.data;
      if(!datas.error){setData(datas)}
      }
