@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 export default function App() {
   const [data, setData] = useState(false);
-  const [info, setInfo] = useState("auto:ip");
+  const [info, setInfo] = useState("london");
   //const [input, setInput] = useState('');
   useEffect(
    function () {
@@ -14,7 +14,7 @@ export default function App() {
      }
      catch(err){
        alert('Use a valid city');
-       setInfo("auto:ip");
+       setInfo("london");
      }
     })();
    },
