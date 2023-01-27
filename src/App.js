@@ -3,7 +3,7 @@ import "./App.css";
 import axios from 'axios';
 export default function App() {
   const [data, setData] = useState(false);
-  const [info, setInfo] = useState("london");
+  const [info, setInfo] = useState("auto:ip");
   //const [input, setInput] = useState('');
   useEffect(
    function () {
@@ -16,7 +16,7 @@ export default function App() {
      catch(err){
        alert('Use a valid city');
        alert(err)
-       setInfo("london");
+       setInfo("auto:ip");
      }
     })();
    },
