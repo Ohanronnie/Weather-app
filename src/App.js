@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import axios from 'axios';
 export default function App() {
   const [data, setData] = useState(false);
   const [info, setInfo] = useState("london");
@@ -8,8 +9,8 @@ export default function App() {
    function () {
    (async function(){
      try{
-     let response =  await fetch(`http://api.weatherapi.com/v1/forecast.json?key=5645245767d44a31a47134430222712&q=${info}&days=5&aqi=yes&alerts=yes`);
-     let datas = await response.json();
+     let response =  await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=5645245767d44a31a47134430222712&q=${info}&days=5&aqi=yes&alerts=yes`);
+     let datas = response.data;
      if(!datas.error){setData(datas)}
      }
      catch(err){
