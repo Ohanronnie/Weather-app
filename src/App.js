@@ -5,7 +5,8 @@ export default function App() {
   const [info, setInfo] = useState("auto:ip");
   //const [input, setInput] = useState('');
   useEffect(
-   async function () {
+   function () {
+   (async function(){
      try{
      let response =  await fetch(`http://api.weatherapi.com/v1/forecast.json?key=5645245767d44a31a47134430222712&q=${info}&days=5&aqi=yes&alerts=yes`);
      let datas = await response.json();
@@ -15,7 +16,8 @@ export default function App() {
        alert('Use a valid city');
        setInfo("auto:ip");
      }
-    },
+    })();
+   },
     [info]
   );
   function date(e) {
